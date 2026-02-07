@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Award, Clock, MapPin, Sparkles } from 'lucide-react';
+import aboutPhoto from '../assets/about-photo.jpg';
 
 const highlights = [
   { icon: Award, label: '500+ Events', desc: 'Across New Jersey' },
@@ -64,32 +65,15 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="relative"
           >
-            <div className="aspect-[4/5] bg-gray-100 overflow-hidden relative border border-gray-200">
-              {/* Camera-shaped placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 border-2 border-black/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Sparkles size={28} className="text-black/15" />
-                  </div>
-                  <p className="text-black/20 text-xs font-display font-bold tracking-[0.2em] uppercase">
-                    Your Photo Here
-                  </p>
-                </div>
-              </div>
-              {/* Film strip holes at top and bottom */}
-              <div className="absolute top-0 left-0 right-0 h-6 bg-black/5 flex items-center justify-around px-4">
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <div key={i} className="w-3 h-2 bg-black/5 rounded-sm" />
-                ))}
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-6 bg-black/5 flex items-center justify-around px-4">
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <div key={i} className="w-3 h-2 bg-black/5 rounded-sm" />
-                ))}
-              </div>
+            <div className="relative rounded-sm overflow-hidden">
+              <img
+                src={aboutPhoto}
+                alt="NJ Photobooth"
+                className="w-full h-auto rounded-sm"
+              />
             </div>
             {/* Offset shadow frame */}
-            <div className="absolute -bottom-3 -right-3 inset-0 border-2 border-black/10 -z-10" />
+            <div className="absolute -bottom-3 -right-3 inset-0 border-2 border-black/10 rounded-sm -z-10" />
           </motion.div>
         </div>
       </div>
